@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ####################### color ######################## -->
+
+    <!-- 前景色 -->
+    <color name="foreground">@color/white</color>
+
+    <!-- 背景色 -->
+    <color name="background">#F2F1F0</color>
+
+    <!-- 白色 -->
+    <color name="white">@android:color/white</color>
+
+    <!-- 黑色 -->
+    <color name="black">@android:color/black</color>
+
+    <!-- 红色 -->
+    <color name="red">#FF0000</color>
+
+    <!-- 绿色 -->
+    <color name="green">#00FF00</color>
+
+    <!-- 蓝色 -->
+    <color name="blue">#0000FF</color>
+
+    <!-- 透明 -->
+    <color name="transparent">@android:color/transparent</color>
+
+    <!-- 深灰 -->
+    <color name="gray_dark">#333</color>
+
+    <!-- 少灰 -->
+    <color name="gray_minor">#666</color>
+
+    <!-- 淡灰 -->
+    <color name="gray_light">#999</color>
+
+    <!-- 状态栏颜色 -->
+    <color name="statusbar_background">@color/colorPrimary</color>
+
+    <!-- ToolBar 背景色 -->
+    <color name="toolbar_background">@color/colorPrimary</color>
+
+    <!-- ####################### dimens ######################## -->
+
+    <!-- 加载更多进度条大小 -->
+    <dimen name="load_more_progressbar">50pt</dimen>
+
+    <!-- 通用margin值 -->
+    <dimen name="margin_normal">30pt</dimen>
+
+    <!-- 通用padding值 -->
+    <dimen name="padding_normal">@dimen/margin_normal</dimen>
+
+    <!-- 字体大小 -->
+    <dimen name="txt_18">36pt</dimen>
+
+    <!-- ####################### strings ######################## -->
+
+    <string name="net_error">网络异常，点击重试</string>
+
+    <!-- ####################### styles ######################## -->
+
+    <style name="MatchParent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="WrapContent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="WidthFill">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="HeightFill">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="WeightOne" parent="MatchParent">
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="WidthWeight" parent="WidthFill">
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="HeightWeight" parent="HeightFill">
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="toolbar_title" parent="WrapContent">
+        <item name="android:textSize">@dimen/txt_18</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <!-- ####################### ids ######################## -->
+
+    <item name="rela1" type="id" />
+    <item name="rela2" type="id" />
+    <item name="rela3" type="id" />
+    <item name="rela4" type="id" />
+    <item name="rela5" type="id" />
+</resources>

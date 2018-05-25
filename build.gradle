@@ -1,0 +1,28 @@
+apply from: "configs.gradle"
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath "com.android.tools.build:gradle:${GRADLE_VERSION}"
+        //λ表达式
+        classpath "me.tatarka:gradle-retrolambda:${LAMBDA_VERSION}"
+
+        classpath "com.jakewharton:butterknife-gradle-plugin:${BUTTERKNIFE_PLUGIN}"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

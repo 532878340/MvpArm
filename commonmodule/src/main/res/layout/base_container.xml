@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchParent">
+
+    <LinearLayout
+        style="@style/MatchParent"
+        android:orientation="vertical">
+
+        <com.mvp.arm.commonmodule.view.TitleBar
+            android:id="@+id/titleBar"
+            style="@style/WidthFill"
+            android:visibility="gone" />
+
+        <FrameLayout style="@style/MatchParent">
+
+            <FrameLayout
+                android:id="@+id/container"
+                style="@style/MatchParent" />
+
+            <com.mvp.arm.commonmodule.view.loading.LoadingView
+                android:id="@+id/loading"
+                style="@style/MatchParent" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

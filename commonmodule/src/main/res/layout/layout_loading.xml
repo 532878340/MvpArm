@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:id="@+id/errorLayout"
+        style="@style/MatchParent"
+        android:visibility="visible">
+
+        <LinearLayout
+            style="@style/WrapContent"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="300pt"
+                android:layout_height="300pt"
+                android:src="@drawable/icon_error_network" />
+
+            <TextView
+                style="@style/WrapContent"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/padding_normal"
+                android:text="@string/net_error" />
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/spinKit"
+        style="@style/SpinKitView.Circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:SpinKit_Color="@color/colorAccent" />
+</merge>

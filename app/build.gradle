@@ -1,0 +1,34 @@
+apply plugin: 'com.android.application'
+
+def cfg = rootProject.ext.android
+android {
+    compileSdkVersion cfg.compileSdk
+    defaultConfig {
+        applicationId cfg.appId
+        minSdkVersion cfg.minSdk
+        targetSdkVersion cfg.targetSdk
+        versionCode cfg.versionCode
+        versionName cfg.versionName
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api project(':commonmodule')
+
+    if(!isPlugin.toBoolean()){
+        api project(':mainmodule')
+    }
+}

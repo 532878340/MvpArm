@@ -1,0 +1,175 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="Theme.AppCompat.Light.NoActionBar.FullScreen" parent="@style/Theme.AppCompat.Light">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="AppTheme.Launcher" parent="Theme.AppCompat.Light.NoActionBar.FullScreen">
+        <item name="android:windowBackground">@color/colorPrimaryDark</item>
+    </style>
+
+    <!-- 通用视图  -->
+    <style name="base_view_100">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">100pt</item>
+    </style>
+
+    <!-- 白色背景 灰色边框 -->
+    <style name="edt_white_gray" parent="base_view_100">
+        <item name="android:background">@drawable/shape_rect_white_gray</item>
+        <item name="android:textColorHint">@color/gray_d1</item>
+        <item name="android:textSize">32pt</item>
+        <item name="android:paddingLeft">20pt</item>
+        <item name="android:drawablePadding">10pt</item>
+        <item name="android:paddingRight">20pt</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <!-- ######################## 按钮 ########################## -->
+    <style name="btn_yellow" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">88pt</item>
+        <item name="android:background">@color/gray_light</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">32pt</item>
+    </style>
+
+    <!-- ######################## 文本 ########################## -->
+    <!-- 黑色通用 -->
+    <style name="label_dark" parent="WrapContent">
+        <item name="android:textColor">@color/gray_dark</item>
+        <item name="android:textSize">30pt</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:drawablePadding">10pt</item>
+    </style>
+
+    <!-- 灰色通用 -->
+    <style name="label_minor" parent="label_dark">
+        <item name="android:textColor">@color/gray_minor</item>
+    </style>
+
+    <!-- 淡灰色通用 -->
+    <style name="label_light" parent="label_dark">
+        <item name="android:textColor">@color/gray_light</item>
+    </style>
+
+    <!-- 白色通用 -->
+    <style name="label_white" parent="label_dark">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- 黑色 28pt -->
+    <style name="label_dark_28" parent="label_dark">
+        <item name="android:textSize">28pt</item>
+    </style>
+
+    <!-- 黑色 32pt -->
+    <style name="label_dark_32" parent="label_dark">
+        <item name="android:textSize">32pt</item>
+    </style>
+
+    <!-- 黑色 34pt -->
+    <style name="label_dark_34" parent="label_dark">
+        <item name="android:textSize">34pt</item>
+    </style>
+
+    <!-- 灰色 28pt -->
+    <style name="label_minor_28" parent="label_minor">
+        <item name="android:textSize">28pt</item>
+    </style>
+
+    <!-- 灰色 32pt -->
+    <style name="label_minor_32" parent="label_minor">
+        <item name="android:textSize">32pt</item>
+    </style>
+
+    <!-- 灰色 34pt -->
+    <style name="label_minor_34" parent="label_minor">
+        <item name="android:textSize">34pt</item>
+    </style>
+
+    <!-- 淡灰色 28pt -->
+    <style name="label_light_28" parent="label_light">
+        <item name="android:textSize">28pt</item>
+    </style>
+
+    <!-- 淡灰色 32pt -->
+    <style name="label_light_32" parent="label_light">
+        <item name="android:textSize">32pt</item>
+    </style>
+
+    <!-- 淡灰色 34pt -->
+    <style name="label_light_34" parent="label_light">
+        <item name="android:textSize">34pt</item>
+    </style>
+
+    <!-- 白色 28pt -->
+    <style name="label_white_28" parent="label_white">
+        <item name="android:textSize">28pt</item>
+    </style>
+
+    <!-- 白色 32pt -->
+    <style name="label_white_32" parent="label_white">
+        <item name="android:textSize">32pt</item>
+    </style>
+
+    <!-- 白色 34pt -->
+    <style name="label_white_34" parent="label_white">
+        <item name="android:textSize">34pt</item>
+    </style>
+
+    <!-- ######################## 布局 ########################## -->
+    <!-- MatchParent 竖直对齐 -->
+    <style name="lin_match_vertical" parent="MatchParent">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- MatchParent 水平对齐 -->
+    <style name="lin_match_horizontal" parent="MatchParent">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <!-- WrapContent 竖直对齐 -->
+    <style name="lin_wrap_vertical" parent="WrapContent">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- WrapContent 水平对齐 -->
+    <style name="lin_wrap_horizontal" parent="WrapContent">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <!-- WidthFill 竖直对齐 -->
+    <style name="lin_width_vertical" parent="WidthFill">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- WidthFill 水平对齐 -->
+    <style name="lin_width_horizontal" parent="WidthFill">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <!-- WidthFill 竖直对齐 -->
+    <style name="lin_height_vertical" parent="HeightFill">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- WidthFill 水平对齐 -->
+    <style name="lin_height_horizontal" parent="HeightFill">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <!-- ######################## View ########################## -->
+
+</resources>

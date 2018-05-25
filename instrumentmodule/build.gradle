@@ -1,0 +1,37 @@
+apply plugin: 'com.android.library'
+
+def cfg = rootProject.ext.android
+def instrument = rootProject.ext.instruments
+
+android {
+    compileSdkVersion cfg.compileSdk
+    defaultConfig {
+        minSdkVersion cfg.minSdk
+        targetSdkVersion cfg.targetSdk
+        versionCode cfg.versionCode
+        versionName cfg.versionName
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api "com.orhanobut:logger:${instrument.logger}"
+    api "com.tencent.bugly:crashreport:${instrument.bugly}"
+    api "com.android.support:multidex:${instrument.multidex}"
+    debugApi "com.github.markzhai:blockcanary-android:${instrument.blockcanary}"
+    releaseApi "com.github.markzhai:blockcanary-no-op:${instrument.blockcanary}"
+    debugApi "com.squareup.leakcanary:leakcanary-android:${instrument.leakcanary}"
+    releaseApi "com.squareup.leakcanary:leakcanary-android-no-op:${instrument.leakcanary}"
+}

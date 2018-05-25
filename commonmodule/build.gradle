@@ -1,0 +1,75 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
+
+def cfg = rootProject.ext.android
+def libraries = rootProject.ext.dependencies
+def view = rootProject.ext.views
+
+android {
+    compileSdkVersion cfg.compileSdk
+    defaultConfig {
+        minSdkVersion cfg.minSdk
+        targetSdkVersion cfg.targetSdk
+        versionCode cfg.versionCode
+        versionName cfg.versionName
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+            }
+        }
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            buildConfigField "String", "API_URL", "\"${urls.debug}\""
+        }
+
+        release {
+            minifyEnabled false
+            buildConfigField "String", "API_URL", "\"${urls.release}\""
+
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api "com.squareup.retrofit2:retrofit:${libraries.retrofit}"
+    api "com.squareup.retrofit2:adapter-rxjava2:${libraries.retrofit}"
+    api "com.squareup.retrofit2:converter-gson:${libraries.retrofit}"
+    api "io.reactivex.rxjava2:rxandroid:${libraries.rxandroid}"
+    api "io.reactivex.rxjava2:rxjava:${libraries.rxjava}"
+    api "com.jakewharton.rxbinding2:rxbinding:${libraries.rxbinding}"
+    api "com.trello.rxlifecycle2:rxlifecycle:${libraries.rxlifecycle}"
+    api "com.trello.rxlifecycle2:rxlifecycle-components:${libraries.rxlifecycle}"
+    api "com.trello.rxlifecycle2:rxlifecycle-android:${libraries.rxlifecycle}"
+    api "com.tbruyelle.rxpermissions2:rxpermissions:${libraries.rxpermissions}"
+    api "zlc.season:rxdownload3:${libraries.rxdownload}"
+    api "com.jakewharton:butterknife:${libraries.butterknife}"
+    annotationProcessor "com.jakewharton:butterknife-compiler:${libraries.butterknife}"
+    api "com.google.dagger:dagger:${libraries.dagger}"
+    annotationProcessor "com.google.dagger:dagger-compiler:${libraries.dagger}"
+    api "com.github.bumptech.glide:glide:${libraries.glide}"
+    annotationProcessor "com.github.bumptech.glide:compiler:${libraries.glide}"
+    api "com.github.mzule.activityrouter:activityrouter:${libraries.router}"
+    annotationProcessor "com.github.mzule.activityrouter:compiler:${libraries.route_compile}"
+
+    api "com.android.support:appcompat-v7:${cfg.support}"
+    api "com.android.support:design:${cfg.support}"
+    api "com.android.support:recyclerview-v7:${cfg.support}"
+    api "com.android.support.constraint:constraint-layout:${view.constraint}"
+
+    api "com.github.ybq:Android-SpinKit:${view.spinkit}"
+    api "com.scwang.smartrefresh:SmartRefreshLayout:${view.smartRefreshLayout}"
+    api "com.yqritc:recyclerview-flexibledivider:${view.flexibledivider}"
+
+    api project(':instrumentmodule')
+}

@@ -1,0 +1,7 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mvp.arm.mallmodule">
+
+    <application>
+        <activity android:name=".MallActivity" />
+    </application>
+</manifest>
