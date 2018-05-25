@@ -23,7 +23,7 @@ import javax.crypto.spec.SecretKeySpec;
 public class EncryptManager {
 
     private String key;
-    private static EncryptManager instance;
+    private static volatile EncryptManager instance;
     private static final String TAG = EncryptManager.class.getSimpleName();
 
 

@@ -13,7 +13,7 @@ import com.mvp.arm.commonmodule.app.BaseApplication;
 
 @SuppressWarnings("unused")
 public class SharedPreferenceManager {
-    private static SharedPreferenceManager mInstance;
+    private static volatile SharedPreferenceManager mInstance;
 
     private SecuritySharedPreference mSharedPreference;
     private SecuritySharedPreference.Editor mEditor;

@@ -12,7 +12,7 @@ import java.util.List;
  * @date 2018/5/22
  */
 public final class ActivityContainer {
-    private static ActivityContainer sInstance;
+    private static volatile ActivityContainer sInstance;
 
     public static ActivityContainer get(){
         if(sInstance == null){

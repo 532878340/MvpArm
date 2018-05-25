@@ -15,7 +15,7 @@ import com.mvp.arm.commonmodule.R;
  * @date 2018/5/22
  */
 public class ToastManager {
-    private static ToastManager mInstance;
+    private static volatile ToastManager mInstance;
 
     public static ToastManager get(){
         if(mInstance != null){

@@ -43,9 +43,11 @@ public class SystemUtil {
      */
     public static String getSDCardPath() {
         String cmd = "cat /proc/mounts";
-        Runtime run = Runtime.getRuntime();// 返回与当前 Java 应用程序相关的运行时对象
+        // 返回与当前 Java 应用程序相关的运行时对象
+        Runtime run = Runtime.getRuntime();
         try {
-            Process p = run.exec(cmd);// 启动另一个进程来执行命令
+            // 启动另一个进程来执行命令
+            Process p = run.exec(cmd);
             BufferedInputStream in = new BufferedInputStream(p.getInputStream());
             BufferedReader inBr = new BufferedReader(new InputStreamReader(in));
 

@@ -23,7 +23,7 @@ public class RxBus {
     private final FlowableProcessor<Object> mBus;
     private final Map<Class<?>,Object> mStickyEventMap;
 
-    private static RxBus mInstance;
+    private static volatile RxBus mInstance;
 
     private RxBus(){
         mBus = PublishProcessor.create().toSerialized();
