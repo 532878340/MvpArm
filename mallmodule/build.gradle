@@ -4,8 +4,9 @@ if(isPlugin.toBoolean()){
     apply plugin: 'com.android.library'
 }
 
-
 def cfg = rootProject.ext.android
+def libraries = rootProject.ext.dependencies
+
 android {
     compileSdkVersion cfg.compileSdk
     defaultConfig {
@@ -46,4 +47,5 @@ dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
 
     api project(':commonmodule')
+    annotationProcessor "com.google.dagger:dagger-compiler:${libraries.dagger}"
 }

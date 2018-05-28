@@ -9,8 +9,6 @@ import android.widget.FrameLayout;
 import com.github.ybq.android.spinkit.SpinKitView;
 import com.mvp.arm.commonmodule.R;
 
-import butterknife.ButterKnife;
-
 /**
  * 加载视图
  * @author Zijin
@@ -55,7 +53,6 @@ public class LoadingView extends FrameLayout implements ILoading {
         super.onFinishInflate();
 
         View.inflate(getContext(), R.layout.layout_loading, this);
-        ButterKnife.bind(this);
         setVisibility(View.GONE);
 
         mSpinKit = findViewById(R.id.spinKit);

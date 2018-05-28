@@ -1,18 +1,15 @@
 package com.mvp.arm.commonmodule.base.ui;
 
-import android.app.Activity;
 import android.support.annotation.CallSuper;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatDelegate;
 
-import com.mvp.arm.commonmodule.R2;
-import com.mvp.arm.commonmodule.app.BaseApplication;
+import com.mvp.arm.commonmodule.R;
 import com.mvp.arm.commonmodule.base.constant.MessageMode;
 import com.mvp.arm.commonmodule.base.constant.Status;
 import com.mvp.arm.commonmodule.base.contract.IBaseView;
 import com.mvp.arm.commonmodule.base.presenter.BasePresenter;
-import com.mvp.arm.commonmodule.di.component.ActivityComponent;
-import com.mvp.arm.commonmodule.di.component.DaggerActivityComponent;
 import com.mvp.arm.commonmodule.di.module.ActivityModule;
 import com.mvp.arm.commonmodule.util.SnackBarUtils;
 import com.mvp.arm.commonmodule.util.ToastManager;
@@ -21,16 +18,13 @@ import com.trello.rxlifecycle2.LifecycleTransformer;
 
 import javax.inject.Inject;
 
-import butterknife.BindView;
-
 /**
  * MVP activity基类
  *
  * @author Gjm
  * @date 2018/5/23
  */
-public abstract class BaseActivity<P extends BasePresenter> extends SimpleActivity implements IBaseView {
-    @BindView(R2.id.loading)
+public abstract class BaseActivity<C,P extends BasePresenter> extends SimpleActivity implements IBaseView {
     protected LoadingView mLoadingView;
 
     /**
@@ -44,11 +38,8 @@ public abstract class BaseActivity<P extends BasePresenter> extends SimpleActivi
     /**
      * 获取activity Component
      */
-    protected ActivityComponent getActivityComponent(){
-        return DaggerActivityComponent.builder()
-                .appComponent(BaseApplication.getAppComponent())
-                .activityModule(getActivityModule())
-                .build();
+    protected C getActivityComponent(){
+        return null;
     }
 
     /**
@@ -67,6 +58,8 @@ public abstract class BaseActivity<P extends BasePresenter> extends SimpleActivi
         if(mPresenter != null){
             mPresenter.attach(this);
         }
+
+        mLoadingView = findViewById(R.id.loading);
 
         if(initLoadingUI()){
             onStatusInit();
@@ -141,7 +134,7 @@ public abstract class BaseActivity<P extends BasePresenter> extends SimpleActivi
     }
 
     @Override
-    public Activity getActivity() {
+    public FragmentActivity getFragmentActivity() {
         return this;
     }
 

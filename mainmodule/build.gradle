@@ -3,9 +3,9 @@ if(isPlugin.toBoolean()){
 }else{
     apply plugin: 'com.android.library'
 }
-apply plugin: 'com.jakewharton.butterknife'
 
 def cfg = rootProject.ext.android
+def libraries = rootProject.ext.dependencies
 
 android {
     compileSdkVersion cfg.compileSdk
@@ -45,6 +45,5 @@ android {
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
     api project(':commonmodule')
-
-    annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.ext.dependencies.butterknife}"
+    annotationProcessor "com.google.dagger:dagger-compiler:${libraries.dagger}"
 }

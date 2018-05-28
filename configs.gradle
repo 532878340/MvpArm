@@ -18,7 +18,6 @@ ext{
             rxjava : "2.1.14-RC1",
             rxbinding : "2.1.1",
             dagger : "2.16",
-            butterknife : "8.5.1",
             rxlifecycle : "2.2.1",
             glide : "4.7.1",
             rxpermissions : "0.9.5@aar",
@@ -40,6 +39,7 @@ ext{
             spinkit : "1.1.0",
             flexibledivider : "1.4.0",
             smartRefreshLayout : "1.1.0-alpha-5",
+            flycoTabLayout : "2.1.2@aar"
     ]
 
     urls = [

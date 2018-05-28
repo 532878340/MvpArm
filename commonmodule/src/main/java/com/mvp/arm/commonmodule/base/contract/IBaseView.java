@@ -1,6 +1,7 @@
 package com.mvp.arm.commonmodule.base.contract;
 
 import android.app.Activity;
+import android.support.v4.app.FragmentActivity;
 
 import com.mvp.arm.commonmodule.base.constant.MessageMode;
 import com.trello.rxlifecycle2.LifecycleTransformer;
@@ -37,7 +38,7 @@ public interface IBaseView extends IContract.IView{
      */
     void showMessage(MessageMode mode, CharSequence message);
 
-    Activity getActivity();
+    FragmentActivity getFragmentActivity();
 
     /**
      * 绑定生命周期

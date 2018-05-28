@@ -8,5 +8,5 @@ import com.mvp.arm.commonmodule.app.BaseApplication;
  * @author Gjm
  * @date 2018/5/23
  */
-public class MallApplication extends BaseApplication{
+public class MallApplication extends BaseApplication {
 }

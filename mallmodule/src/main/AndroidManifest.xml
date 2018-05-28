@@ -1,7 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mvp.arm.mallmodule">
+    package="com.mvp.arm.mall">
 
     <application>
         <activity android:name=".MallActivity" />
+
+        <meta-data
+            android:name="com.mvp.arm.mall.delegate.MallDelegate"
+            android:value="IModuleConfig" />
     </application>
 </manifest>

@@ -2,12 +2,7 @@ package com.mvp.arm.commonmodule.di.module;
 
 import android.app.Application;
 
-import com.mvp.arm.commonmodule.di.annotation.scope.ApplicationScope;
-import com.mvp.arm.commonmodule.model.DataManager;
-import com.mvp.arm.commonmodule.model.db.DbHelper;
-import com.mvp.arm.commonmodule.model.db.impl.GreenDaoHelper;
-import com.mvp.arm.commonmodule.model.http.HttpHelper;
-import com.mvp.arm.commonmodule.model.http.impl.RetrofitHelper;
+import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
@@ -27,26 +22,8 @@ public class AppModule {
     }
 
     @Provides
-    @ApplicationScope
+    @Singleton
     Application provideApp(){
         return mApp;
-    }
-
-    @ApplicationScope
-    @Provides
-    HttpHelper provideHttpHelper(RetrofitHelper retrofitHelper){
-        return retrofitHelper;
-    }
-
-    @ApplicationScope
-    @Provides
-    DbHelper provideDBHelper(GreenDaoHelper greenDaoHelper){
-        return greenDaoHelper;
-    }
-
-    @ApplicationScope
-    @Provides
-    DataManager provideDataManager(HttpHelper httpHelper, DbHelper dbHelper){
-        return new DataManager(httpHelper,dbHelper);
     }
 }

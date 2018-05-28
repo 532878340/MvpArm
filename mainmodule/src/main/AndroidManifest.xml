@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mvp.arm.mainmodule">
+    package="com.mvp.arm.main">
 
     <application>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".ui.MainActivity" />
+
+        <meta-data
+            android:name="com.mvp.arm.main.delegate.MainDelegate"
+            android:value="IModuleConfig" />
     </application>
 
 </manifest>

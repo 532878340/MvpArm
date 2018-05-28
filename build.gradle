@@ -10,8 +10,6 @@ buildscript {
         classpath "com.android.tools.build:gradle:${GRADLE_VERSION}"
         //λ表达式
         classpath "me.tatarka:gradle-retrolambda:${LAMBDA_VERSION}"
-
-        classpath "com.jakewharton:butterknife-gradle-plugin:${BUTTERKNIFE_PLUGIN}"
     }
 }
 

@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.jakewharton.butterknife'
 
 def cfg = rootProject.ext.android
 def libraries = rootProject.ext.dependencies
@@ -53,8 +52,6 @@ dependencies {
     api "com.trello.rxlifecycle2:rxlifecycle-android:${libraries.rxlifecycle}"
     api "com.tbruyelle.rxpermissions2:rxpermissions:${libraries.rxpermissions}"
     api "zlc.season:rxdownload3:${libraries.rxdownload}"
-    api "com.jakewharton:butterknife:${libraries.butterknife}"
-    annotationProcessor "com.jakewharton:butterknife-compiler:${libraries.butterknife}"
     api "com.google.dagger:dagger:${libraries.dagger}"
     annotationProcessor "com.google.dagger:dagger-compiler:${libraries.dagger}"
     api "com.github.bumptech.glide:glide:${libraries.glide}"
@@ -70,6 +67,7 @@ dependencies {
     api "com.github.ybq:Android-SpinKit:${view.spinkit}"
     api "com.scwang.smartrefresh:SmartRefreshLayout:${view.smartRefreshLayout}"
     api "com.yqritc:recyclerview-flexibledivider:${view.flexibledivider}"
+    api "com.flyco.tablayout:FlycoTabLayout_Lib:${view.flycoTabLayout}"
 
     api project(':instrumentmodule')
 }

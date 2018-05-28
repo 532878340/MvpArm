@@ -1,6 +1,6 @@
 package com.mvp.arm.commonmodule.di.module;
 
-import android.app.Activity;
+import android.support.v4.app.FragmentActivity;
 
 import com.mvp.arm.commonmodule.di.annotation.scope.ActivityScope;
 import com.tbruyelle.rxpermissions2.RxPermissions;
@@ -16,15 +16,15 @@ import dagger.Provides;
 
 @Module
 public class ActivityModule{
-    private Activity mActivity;
+    private FragmentActivity mActivity;
 
-    public ActivityModule(Activity activity) {
+    public ActivityModule(FragmentActivity activity) {
         this.mActivity = activity;
     }
 
     @Provides
     @ActivityScope
-    Activity provideActivity(){
+    FragmentActivity provideActivity(){
         return mActivity;
     }
 
