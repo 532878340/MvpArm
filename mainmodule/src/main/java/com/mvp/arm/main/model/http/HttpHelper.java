@@ -12,5 +12,5 @@ import io.reactivex.Flowable;
  */
 
 public interface HttpHelper {
-    Flowable<Repo<String>> platformIndex();
+    Flowable<Repo<Object>> platformIndex();
 }

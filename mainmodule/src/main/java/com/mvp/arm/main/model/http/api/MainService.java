@@ -13,5 +13,5 @@ import retrofit2.http.GET;
  */
 public interface MainService {
     @GET(ServiceRoutes.INDEX)
-    Flowable<Repo<String>> platformIndex();
+    Flowable<Repo<Object>> platformIndex();
 }

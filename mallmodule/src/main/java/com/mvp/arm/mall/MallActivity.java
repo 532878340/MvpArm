@@ -2,17 +2,19 @@ package com.mvp.arm.mall;
 
 import android.widget.ImageView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.mvp.arm.commonmodule.util.imageloader.ImageLoader;
 import com.mvp.arm.mall.contract.LoginContract;
 import com.mvp.arm.mall.delegate.RootActivity;
 import com.mvp.arm.mall.presenter.LoginPresenter;
 
 /**
- * $desc$
+ * 商城
  *
  * @author Gjm
  * @date 2018/5/21
  */
+@Route(path = "/mall/main")
 public class MallActivity extends RootActivity<LoginPresenter> implements LoginContract.ILoginView{
     @Override
     protected int getLayoutRes() {

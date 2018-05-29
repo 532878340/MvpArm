@@ -21,7 +21,7 @@ public class MainRepositoryManager implements HttpHelper,DbHelper {
     }
 
     @Override
-    public Flowable<Repo<String>> platformIndex() {
+    public Flowable<Repo<Object>> platformIndex() {
         return mHttpHelper.platformIndex();
     }
 }

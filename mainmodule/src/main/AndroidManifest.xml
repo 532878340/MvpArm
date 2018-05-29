@@ -3,7 +3,7 @@
     package="com.mvp.arm.main">
 
     <application>
-        <activity android:name=".ui.MainActivity" />
+        <activity android:name=".ui.activity.MainActivity" />
 
         <meta-data
             android:name="com.mvp.arm.main.delegate.MainDelegate"

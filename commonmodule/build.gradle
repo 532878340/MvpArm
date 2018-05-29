@@ -15,6 +15,7 @@ android {
         javaCompileOptions {
             annotationProcessorOptions {
                 includeCompileClasspath = true
+                arguments = [moduleName: project.getName()]
             }
         }
     }
@@ -56,8 +57,7 @@ dependencies {
     annotationProcessor "com.google.dagger:dagger-compiler:${libraries.dagger}"
     api "com.github.bumptech.glide:glide:${libraries.glide}"
     annotationProcessor "com.github.bumptech.glide:compiler:${libraries.glide}"
-    api "com.github.mzule.activityrouter:activityrouter:${libraries.router}"
-    annotationProcessor "com.github.mzule.activityrouter:compiler:${libraries.route_compile}"
+    api "com.alibaba:arouter-api:${libraries.arouter_api}"
 
     api "com.android.support:appcompat-v7:${cfg.support}"
     api "com.android.support:design:${cfg.support}"

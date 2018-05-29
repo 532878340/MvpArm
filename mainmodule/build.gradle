@@ -14,6 +14,14 @@ android {
         targetSdkVersion cfg.targetSdk
         versionCode cfg.versionCode
         versionName cfg.versionName
+
+        if(!isPlugin.toBoolean()){
+            javaCompileOptions {
+                annotationProcessorOptions {
+                    arguments = [moduleName: project.getName()]
+                }
+            }
+        }
     }
 
     buildTypes {
@@ -46,4 +54,8 @@ dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
     api project(':commonmodule')
     annotationProcessor "com.google.dagger:dagger-compiler:${libraries.dagger}"
+
+    if(!isPlugin.toBoolean()){
+        annotationProcessor "com.alibaba:arouter-compiler:${libraries.arouter_compile}"
+    }
 }

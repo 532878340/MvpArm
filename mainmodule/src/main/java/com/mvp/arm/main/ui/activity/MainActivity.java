@@ -1,4 +1,4 @@
-package com.mvp.arm.main.ui;
+package com.mvp.arm.main.ui.activity;
 
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,9 +9,9 @@ import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.mvp.arm.commonmodule.base.adapter.BaseFragmentPagerAdapter;
 import com.mvp.arm.commonmodule.base.ui.SimpleActivity;
+import com.mvp.arm.main.R;
 import com.mvp.arm.main.bean.sub.MainTabEntity;
 import com.mvp.arm.main.ui.fragment.IndexFragment;
-import com.mvp.arm.mainmodule.R;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -4,7 +4,7 @@ import android.support.v4.app.FragmentActivity;
 
 import com.mvp.arm.commonmodule.di.annotation.scope.ActivityScope;
 import com.mvp.arm.commonmodule.di.module.ActivityModule;
-import com.mvp.arm.main.ui.MainActivity;
+import com.mvp.arm.main.ui.activity.MainActivity;
 
 import dagger.Component;
 

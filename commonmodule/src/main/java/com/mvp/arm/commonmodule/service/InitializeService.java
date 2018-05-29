@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.multidex.MultiDex;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.github.moduth.blockcanary.BlockCanary;
 import com.mvp.arm.commonmodule.R;
 import com.mvp.arm.commonmodule.app.BaseApplication;
@@ -52,8 +53,14 @@ public class InitializeService extends IntentService{
     private static void syncInit(Context context){
         //图片加载
         ImageLoader.init(context);
-        //数据库
+        //multidex
         MultiDex.install(context);
+        //ARouter
+        if(Configs.DEBUG_ENABLE){
+            ARouter.openLog();
+            ARouter.openDebug();
+        }
+        ARouter.init(BaseApplication.get());
     }
 
     /**

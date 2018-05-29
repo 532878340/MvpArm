@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
 def cfg = rootProject.ext.android
+def libraries = rootProject.ext.dependencies
 android {
     compileSdkVersion cfg.compileSdk
     defaultConfig {
@@ -9,6 +10,28 @@ android {
         targetSdkVersion cfg.targetSdk
         versionCode cfg.versionCode
         versionName cfg.versionName
+
+        if(!isPlugin.toBoolean()){
+            javaCompileOptions {
+                annotationProcessorOptions {
+                    arguments = [moduleName: project.getName()]
+                }
+            }
+        }
+    }
+
+    sourceSets{
+        main{
+            if(isPlugin.toBoolean()){
+                manifest.srcFile 'src/main/module/AndroidManifest.xml'
+            }else{
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+                //集成开发模式下则需要排除debug文件夹中的所有Java文件
+                java{
+                    exclude 'debug/**'
+                }
+            }
+        }
     }
 
     buildTypes {
@@ -29,6 +52,9 @@ dependencies {
     api project(':commonmodule')
 
     if(!isPlugin.toBoolean()){
+        annotationProcessor "com.alibaba:arouter-compiler:${libraries.arouter_compile}"
+
         api project(':mainmodule')
+        api project(':mallmodule')
     }
 }

@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 
 import com.mvp.arm.commonmodule.di.annotation.scope.FragmentScope;
 import com.mvp.arm.commonmodule.di.module.FragmentModule;
+import com.mvp.arm.main.ui.fragment.IndexFragment;
 
 import dagger.Component;
 
@@ -17,4 +18,6 @@ import dagger.Component;
 @Component(dependencies = MainComponent.class,modules = FragmentModule.class)
 public interface FragmentComponent {
     Fragment getFragment();
+
+    void inject(IndexFragment fragment);
 }

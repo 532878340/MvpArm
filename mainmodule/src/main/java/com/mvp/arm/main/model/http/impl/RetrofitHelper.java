@@ -26,7 +26,7 @@ public class RetrofitHelper implements HttpHelper {
     }
 
     @Override
-    public Flowable<Repo<String>> platformIndex() {
+    public Flowable<Repo<Object>> platformIndex() {
         return mMallService.platformIndex();
     }
 }
