@@ -22,9 +22,6 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
 import com.scwang.smartrefresh.layout.footer.ClassicsFooter;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
-import com.squareup.leakcanary.AndroidExcludedRefs;
-import com.squareup.leakcanary.DisplayLeakService;
-import com.squareup.leakcanary.ExcludedRefs;
 import com.squareup.leakcanary.LeakCanary;
 import com.tencent.bugly.crashreport.CrashReport;
 
@@ -151,16 +148,10 @@ public class InitializeService extends IntentService{
      * 初始化内存泄漏检测
      */
     private void initLeakCanary(){
-        ExcludedRefs excludedRefs = AndroidExcludedRefs.createAppDefaults()
-                .instanceField("android.view.inputmethod.InputMethodManager", "sInstance")
-                .instanceField("android.view.inputmethod.InputMethodManager", "mLastSrvView")
-                .instanceField("com.android.internal.policy.PhoneWindow$DecorView", "mContext")
-                .instanceField("android.support.v7.widget.SearchView$SearchAutoComplete", "mContext")
-                .build();
-        LeakCanary.refWatcher(BaseApplication.get())
-                .listenerServiceClass(DisplayLeakService.class)
-                .excludedRefs(excludedRefs)
-                .buildAndInstall();
+        if(LeakCanary.isInAnalyzerProcess(BaseApplication.get())){
+            return;
+        }
+        LeakCanary.install(BaseApplication.get());
     }
 
     /**

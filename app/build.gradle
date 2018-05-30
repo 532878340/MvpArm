@@ -38,12 +38,30 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            debuggable true
+            //启用multidex的支持
+            multiDexEnabled true
+            //压缩对齐生成的apk包
+            zipAlignEnabled true
         }
     }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    flavorDimensions "default"
+    productFlavors {
+        yingyongbao{dimension "default"}
+        huawei{dimension "default"}
+        xiaomi{dimension "default"}
+
+        //批量处理
+        productFlavors.all { flavor ->
+            flavor.manifestPlaceholders = [CHANNEL_VALUE: name]
+        }
     }
 }
 
