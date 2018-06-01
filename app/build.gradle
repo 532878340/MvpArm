@@ -20,6 +20,15 @@ android {
         }
     }
 
+    signingConfigs {
+        config {
+            keyAlias KEY_ALIAS
+            keyPassword KEY_PASSWORD
+            storeFile file(STORE_FILE_PATH)
+            storePassword STORE_PASSWORD
+        }
+    }
+
     sourceSets{
         main{
             if(isPlugin.toBoolean()){
@@ -37,9 +46,10 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+            signingConfig signingConfigs.config
+
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
-            debuggable true
             //启用multidex的支持
             multiDexEnabled true
             //压缩对齐生成的apk包
